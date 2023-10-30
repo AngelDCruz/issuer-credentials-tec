@@ -6,37 +6,12 @@ services:
       - ./.coordinator.local.env
     ports:
       - "4005:4005"
-    profiles:
-      - local
   signer-local:
     image: digitalcredentials/signing-service:0.1.0
     env_file:
       - ./.signing-service.local.env
-    profiles:
-      - local
   status-local:
     image: digitalcredentials/status-service:0.1.0
     env_file:
       - ./.status-service.local.env
-    profiles:
-      - local
-  coordinator-dev:
-    image: digitalcredentials/issuer-coordinator:0.1.0
-    env_file:
-      - ./.coordinator.dev.env
-    ports:
-      - "4005:4005"
-    profiles:
-      - develop
-  signer-dev:
-    image: digitalcredentials/signing-service:0.1.0
-    env_file:
-      - ./.signing-service.dev.env
-    profiles:
-      - develop
-  status-dev:
-    image: digitalcredentials/status-service:0.1.0
-    env_file:
-      - ./.status-service.dev.env
-    profiles:
-      - develop
+    
